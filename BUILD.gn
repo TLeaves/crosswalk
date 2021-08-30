@@ -92,8 +92,11 @@ source_set("xwalk_cookies") {
     "runtime/browser/android/net/xwalk_cookie_store_wrapper.cc",
     "runtime/browser/android/net/xwalk_cookie_store_wrapper.h",
   ]
+  deps = [
+    "//services/network/public/mojom:mojom",
+  ]
   if ( tenta_chromium_build ) {
-    deps = [
+    deps += [
       "//third_party/boringssl",
       "//xwalk/runtime/android/empty_tenta",
       "//xwalk/third_party/tenta/crosswalk_extensions:cookie_store",

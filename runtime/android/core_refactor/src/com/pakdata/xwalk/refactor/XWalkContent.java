@@ -930,7 +930,7 @@ class XWalkContent implements XWalkPreferences.KeyValueChangeListener {
         }
         // This was removed completely: https://github.com/chromium/chromium/commit/845a437179fe0a1180b507029acf1272fde27558
         //   mContentViewCore.setBackgroundOpaque(isOpaque(color));
-        setOverlayVideoMode(isOpaque(color));
+        setOverlayVideoMode(!isOpaque(color));
         mContentViewRenderView.setSurfaceViewBackgroundColor(color);
         nativeSetBackgroundColor(mNativeContent, color);
     }
